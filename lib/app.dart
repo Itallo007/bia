@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'dashboard/dashboard.dart';
+import 'login/login.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -12,6 +13,10 @@ class App extends StatelessWidget {
 
       primarySwatch: Colors.green,
     ),
-    home: Dashboard(message: "Welcome to Bia")
+    initialRoute: '/',
+    routes: {
+      '/': (context) => Login(),
+      '/dashboard': (context) => Dashboard(message: "Essa será a tela inicial")
+    }
   );
 }
