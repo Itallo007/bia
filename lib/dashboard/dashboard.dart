@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({Key? key, required this.message}) : super(key: key);
-
-  final String message;
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
   State<Dashboard> createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
+
+  int _selectedIndex = 0;
+
+  List<Widget> screens = [
+    Text('Inicio'),
+    Text('Vagas'),
+    Text('Alunos'),
+    Text('Mais'),
+  ];
+
+  void onTapItem(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,71 +31,42 @@ class _DashboardState extends State<Dashboard> {
         title: Text("Dashboard"),
         actions: [
           IconButton(
-              icon: const Icon(Icons.exit_to_app),
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed('/');
-              })
+            icon: const Icon(Icons.exit_to_app),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/');
+            })
         ],
       ),
-      body: Center(child: Text(widget.message)),
-      bottomNavigationBar: BottomAppBar(
-          color: Colors.green,
-          child: IconTheme(
-            data: IconThemeData(color: Colors.white),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      tooltip: 'Inicio',
-                      icon: Icon(Icons.home),
-                      onPressed: () {},
-                    ),
-                    Text('Inicio', style: TextStyle(color: Colors.white),)
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      tooltip: 'Vagas',
-                      icon: Icon(Icons.work),
-                      onPressed: () {},
-                    ),
-                    Text('Vagas', style: TextStyle(color: Colors.white),)
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      tooltip: 'Alunos',
-                      icon: Icon(Icons.group),
-                      onPressed: () {},
-                    ),
-                    Text('Alunos', style: TextStyle(color: Colors.white),)
-                  ],
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      tooltip: 'Mais',
-                      icon: Icon(Icons.menu),
-                      onPressed: () {},
-                    ),
-                    Text('Mais', style: TextStyle(color: Colors.white),)
-                  ],
-                ),
-              ],
-            ),
-          )),
+      body: Center(child: screens.elementAt(_selectedIndex)),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+            backgroundColor: Colors.green
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.work),
+            label: 'Vagas',
+            backgroundColor: Colors.green
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group),
+            label: 'Alunos',
+            backgroundColor: Colors.green
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: 'Mais',
+            backgroundColor: Colors.green
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white60,
+        showUnselectedLabels: true,
+        onTap: onTapItem,
+      )
     );
   }
 }

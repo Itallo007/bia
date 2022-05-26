@@ -16,7 +16,7 @@ class App extends StatelessWidget {
     initialRoute: '/',
     routes: {
       '/': (context) => Login(),
-      '/dashboard': (context) => Dashboard(message: "Essa será a tela inicial")
+      '/dashboard': (context) => Dashboard()
     }
   );
 }
