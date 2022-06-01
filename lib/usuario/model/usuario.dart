@@ -7,6 +7,7 @@ abstract class Usuario {
   String? _password;
   String? _siape;
   Grupo? _grupo;
+  bool _ativo = true;
 
   // Getters and Setters
   String? get nome => _nome;
@@ -37,5 +38,10 @@ abstract class Usuario {
   Grupo? get grupo => _grupo;
   void setGrupo(grupo) {
     _grupo = grupo;
+  }
+
+  bool get isAtivo => _ativo;
+  void setAtivo(ativo) {
+    _ativo = ativo;
   }
 }
