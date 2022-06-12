@@ -11,6 +11,15 @@ Future<void> main() async {
   var arquivo_materia_estagio = File('materia_estagio.csv').openRead();
   var csv_materia_estagio = await arquivo_materia_estagio.transform(utf8.decoder).transform(CsvToListConverter(fieldDelimiter: ',')).toList();
 
+  var nome;
+  var matricula;
+  var curso;
+  var situacao;
+  var email;
+  var ano_ingresso;
+
+  var ano = 2022.1;
+
 //lista todos os alunos de forma completa
   /* print('Todos os alunos: ')
   csv.forEach((linha) {
@@ -25,11 +34,58 @@ Future<void> main() async {
 
   }); */
 
-  void confere_aluno_matriculado(var matricula_materia_estagio, String nome_materia_estagio, String email_estagio) {
+  bool checar_prioridade_dentro_da_prioridade(double semestre, double ano_aluno) {
+    int pega_inteiro_ano = 0;
+    pega_inteiro_ano = semestre.round();
+
+    double converte_inteiro_ano = pega_inteiro_ano.toDouble();
+    double valor_decimal = 0;
+    valor_decimal = semestre - converte_inteiro_ano;
+
+    if (valor_decimal >= 0.2) {
+      valor_decimal = 0.2;
+    } else if (valor_decimal <= 0.1) {
+      valor_decimal = 0.1;
+    }
+    String valor_decimal_limitado;
+
+    double prioridade = semestre - 1;
+    if (valor_decimal == 0.2) {
+      semestre = prioridade - 0.1;
+      valor_decimal_limitado = semestre.toStringAsFixed(1);
+      double ano_prioridade = double.parse(valor_decimal_limitado);
+
+      if (ano_aluno == ano_prioridade) {
+        return true;
+      } else {
+        return false;
+      }
+    } else if (valor_decimal == 0.1) {
+      prioridade = prioridade - 1;
+      semestre = prioridade + 0.11;
+      valor_decimal_limitado = semestre.toStringAsFixed(1);
+      double ano_prioridade = double.parse(valor_decimal_limitado);
+
+      if (ano_aluno == ano_prioridade) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  void confere_aluno_matriculado(var matricula_materia_estagio, String nome_materia_estagio, String email_estagio, double ano_entrada) {
     int cont = 0;
     csv_materia_estagio.forEach((linha_materia_estagio) {
       if (linha_materia_estagio[1] == matricula_materia_estagio && linha_materia_estagio[2] == nome_materia_estagio) {
-        print('Esse aluno é uma prioridade! \n');
+        print('Esse aluno é uma prioridade!');
+        if (checar_prioridade_dentro_da_prioridade(ano, ano_entrada) == false) {
+          print('A prioridade deste aluno é alta. \n');
+        } else {
+          print('A prioridade deste aluno é mediana. \n');
+        }
         cont++;
       }
     });
@@ -41,15 +97,6 @@ Future<void> main() async {
       }
     }
   }
-
-  var nome;
-  var matricula;
-  var curso;
-  var situacao;
-  var email;
-  var ano_ingresso;
-
-  var ano = 2022.1;
 
   bool calculo_prioridade_superior(double semestre, double ano_aluno) {
     //semestre recebe o ano, ex.: 2022.2; ano_aluno é o ano de ingresso do ifba
@@ -129,15 +176,16 @@ Future<void> main() async {
       ano_ingresso = linha[9];
 
       print('Nome: $nome | Matrícula: $matricula | Curso: $curso | Situação: $situacao | E-mail: $email | Ano de Ingresso: $ano_ingresso');
+
       calculo_prioridade_superior(ano, ano_ingresso);
+
       if (calculo_prioridade_superior(ano, ano_ingresso) == true) {
-        confere_aluno_matriculado(matricula, nome, email);
+        confere_aluno_matriculado(matricula, nome, email, ano_ingresso);
       } else {
         print('Este aluno não é prioridade agora.\n');
       }
       //linha precisa ser adicionada para salvar dados específicos em ads
       //precisa do if para verificar se o aluno ja ta na base de dados ou nao
-      //precisa do filtro de comparar com a materia estagio
     }
     if (situacao == 'Matriculado' && curso == 'IREMIND - MANUTENÇÃO INDUSTRIAL (Irecê)') {
       //salva independente de precisar ou não do estágio
@@ -149,9 +197,11 @@ Future<void> main() async {
       ano_ingresso = linha[9];
 
       print('Nome: $nome | Matrícula: $matricula | Curso: $curso | Situação: $situacao | E-mail: $email | Ano de Ingresso: $ano_ingresso');
+
       calculo_prioridade_superior(ano, ano_ingresso);
+
       if (calculo_prioridade_superior(ano, ano_ingresso) == true) {
-        confere_aluno_matriculado(matricula, nome, email);
+        confere_aluno_matriculado(matricula, nome, email, ano_ingresso);
       } else {
         print('Este aluno não é prioridade agora.\n');
       }
