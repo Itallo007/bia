@@ -8,6 +8,9 @@ Future<void> main() async {
   //abre o arquivo, decodifica os bytes, bota em utf-8 e transforma o delimitador para virgula e depois converte em uma string gigantesca
   //obs. o arquivo "planilha_modificada.csv" é a base com varios dados falsos so para realizar testes
 
+  var arquivo_materia_estagio = File('materia_estagio.csv').openRead();
+  var csv_materia_estagio = await arquivo_materia_estagio.transform(utf8.decoder).transform(CsvToListConverter(fieldDelimiter: ',')).toList();
+
 //lista todos os alunos de forma completa
   /* print('Todos os alunos: ')
   csv.forEach((linha) {
@@ -21,6 +24,23 @@ Future<void> main() async {
     print('Nome: $nome1 | Matrícula: $matricula1 | Curso: $curso1 | Situação: $situacao1 | E-mail: $email1 | Ano de Ingresso: $ano_ingresso1');
 
   }); */
+
+  void confere_aluno_matriculado(var matricula_materia_estagio, String nome_materia_estagio, String email_estagio) {
+    int cont = 0;
+    csv_materia_estagio.forEach((linha_materia_estagio) {
+      if (linha_materia_estagio[1] == matricula_materia_estagio && linha_materia_estagio[2] == nome_materia_estagio) {
+        print('Esse aluno é uma prioridade! \n');
+        cont++;
+      }
+    });
+    if (cont == 0) {
+      if (email_estagio.isNotEmpty) {
+        print('Esse aluno é uma prioridade, porém não está matriculado na matéria estágio e não sabemos se ele já estagiou. Por favor, entre em contato em: $email_estagio \n');
+      } else {
+        print('Esse aluno é uma prioridade, porém não está matriculado na matéria estágio e não sabemos se ele já estagiou. Por favor, consulte o SUAP para mais informações dele.\n');
+      }
+    }
+  }
 
   var nome;
   var matricula;
@@ -73,7 +93,7 @@ Future<void> main() async {
       semestre = prioridade + 0.11;
       valor_decimal_limitado = semestre.toStringAsFixed(1);
 
-      //print('prioridade do semestre terminado em .1 $valor_decimal_limitado');
+//      print('prioridade do semestre terminado em .1 $valor_decimal_limitado');
 
       if (ano_aluno <= semestre) {
         return true;
@@ -107,15 +127,17 @@ Future<void> main() async {
       situacao = linha[6];
       email = linha[8];
       ano_ingresso = linha[9];
+
       print('Nome: $nome | Matrícula: $matricula | Curso: $curso | Situação: $situacao | E-mail: $email | Ano de Ingresso: $ano_ingresso');
       calculo_prioridade_superior(ano, ano_ingresso);
       if (calculo_prioridade_superior(ano, ano_ingresso) == true) {
-        print(' precisa de estagio');
+        confere_aluno_matriculado(matricula, nome, email);
       } else {
-        print('NAO PRECISA DE ESTAGIO');
+        print('Este aluno não é prioridade agora.\n');
       }
       //linha precisa ser adicionada para salvar dados específicos em ads
       //precisa do if para verificar se o aluno ja ta na base de dados ou nao
+      //precisa do filtro de comparar com a materia estagio
     }
     if (situacao == 'Matriculado' && curso == 'IREMIND - MANUTENÇÃO INDUSTRIAL (Irecê)') {
       //salva independente de precisar ou não do estágio
@@ -129,9 +151,9 @@ Future<void> main() async {
       print('Nome: $nome | Matrícula: $matricula | Curso: $curso | Situação: $situacao | E-mail: $email | Ano de Ingresso: $ano_ingresso');
       calculo_prioridade_superior(ano, ano_ingresso);
       if (calculo_prioridade_superior(ano, ano_ingresso) == true) {
-        print(' precisa de estagio');
+        confere_aluno_matriculado(matricula, nome, email);
       } else {
-        print('NAO PRECISA DE ESTAGIO');
+        print('Este aluno não é prioridade agora.\n');
       }
     }
     //linha precisa ser adicionada para salvar dados específicos em manutenção industrial
