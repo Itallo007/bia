@@ -16,5 +16,4 @@ class Curso {
   ModalidadeCurso get modalidadeCurso => _modalidadeCurso;
 
   Professor get coordenador => _coordenador;
-
 }
