@@ -154,11 +154,14 @@ Future<void> main() async {
   }
 
 //precisa terminar :p
-  /*bool calculo_prioridade_integrado(double semestre, double ano_aluno) {
-    semestre = ano;
+  bool calculo_prioridade_integrado(double semestre, double ano_aluno) {
     double resultado = semestre - 2;
-    return false;
-  }*/
+    if (ano_aluno <= resultado) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   //código base para salvar dados de alunos no banco de dados
 
@@ -218,8 +221,16 @@ Future<void> main() async {
       email = linha[8];
       ano_ingresso = linha[9];
 
+      print('Nome: $nome | Matrícula: $matricula | Curso: $curso | Situação: $situacao | E-mail: $email | Ano de Ingresso: $ano_ingresso');
       //linha precisa ser adicionada para salvar dados específicos em tec. informatica
       //precisa do if para verificar se o aluno ja ta na base de dados ou nao
+
+      calculo_prioridade_integrado(ano, ano_ingresso);
+      if (calculo_prioridade_integrado(ano, ano_ingresso) == true) {
+        print("Este aluno do integrado está apto para fazer estágio.\n");
+      } else {
+        print("Este aluno do integrado não está apto para fazer estágio.\n");
+      }
     }
     if (situacao == 'Matriculado' && curso == 'IREBIOINT - TÉCNICO DE NÍVEL MÉDIO EM BIOCOMBUSTÍVEIS - FORMA INTEGRADA (Irecê)') {
       //salva independente de precisar ou não do estágio
@@ -230,8 +241,16 @@ Future<void> main() async {
       email = linha[8];
       ano_ingresso = linha[9];
 
-      //linha precisa ser adicionada para salvar dados específicos em tec. biocombustiveis
+      print('Nome: $nome | Matrícula: $matricula | Curso: $curso | Situação: $situacao | E-mail: $email | Ano de Ingresso: $ano_ingresso');
+      //linha precisa ser adicionada para salvar dados específicos em tec. informatica
       //precisa do if para verificar se o aluno ja ta na base de dados ou nao
+
+      calculo_prioridade_integrado(ano, ano_ingresso);
+      if (calculo_prioridade_integrado(ano, ano_ingresso) == true) {
+        print("Este aluno do integrado está apto para fazer estágio.\n");
+      } else {
+        print("Este aluno do integrado não está apto para fazer estágio.\n");
+      }
     }
     if (situacao == 'Matriculado' && curso == 'IREELEINT - TÉCNICO DE NÍVEL MÉDIO EM ELETROMECÂNICA - FORMA INTEGRADA (Irecê)') {
       //salva independente de precisar ou não do estágio
@@ -242,8 +261,17 @@ Future<void> main() async {
       situacao = linha[6];
       email = linha[8];
       ano_ingresso = linha[9];
-      //linha precisa ser adicionada para salvar dados específicos em tec. eletromecanica
+
+      print('Nome: $nome | Matrícula: $matricula | Curso: $curso | Situação: $situacao | E-mail: $email | Ano de Ingresso: $ano_ingresso');
+      //linha precisa ser adicionada para salvar dados específicos em tec. informatica
       //precisa do if para verificar se o aluno ja ta na base de dados ou nao
+
+      calculo_prioridade_integrado(ano, ano_ingresso);
+      if (calculo_prioridade_integrado(ano, ano_ingresso) == true) {
+        print("Este aluno do integrado está apto para fazer estágio.\n");
+      } else {
+        print("Este aluno do integrado não está apto para fazer estágio.\n");
+      }
     }
   });
 }
