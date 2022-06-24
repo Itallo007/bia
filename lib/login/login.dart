@@ -18,12 +18,15 @@ class Login extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
-              width: 300,
-              height: 135,
+              height: 60,
+            ),
+            SizedBox(
+              width: 400,
+              height: 114,
               child: Image.asset("imagens/bia_logo.png"),
             ),
             SizedBox(
-              height: 80,
+              height: 60,
             ),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
