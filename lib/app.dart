@@ -4,6 +4,13 @@ import 'package:bia/aluno/view/buscarDeletar.dart';
 import 'package:bia/aluno/view/cadastrar.dart';
 import 'package:bia/aluno/view/deletar.dart';
 import 'package:bia/aluno/view/listarBusca.dart';
+import 'package:bia/curso/view/atualizar.dart';
+import 'package:bia/curso/view/atualizarBuscar.dart';
+import 'package:bia/curso/view/buscar.dart';
+import 'package:bia/curso/view/buscarDeletar.dart';
+import 'package:bia/curso/view/cadastrar.dart';
+import 'package:bia/curso/view/deletar.dart';
+import 'package:bia/curso/view/listarBuscar.dart';
 import 'package:bia/professor/view/atualizar.dart';
 import 'package:bia/professor/view/atualizarBuscar.dart';
 import 'package:bia/professor/view/buscar.dart';
@@ -43,5 +50,12 @@ class App extends StatelessWidget {
             '/listarProfessor': (context) => ListarProfessor(),
             '/buscarDeletarProfessor': (context) => BuscarDeletarProfessor(),
             '/deletarProfessor': (context) => DeletarProfessor(),
+            '/cadastrarCurso': (context) => CadastrarCurso(),
+            '/atualizarBuscarCurso': (context) => AtualizarBuscarCurso(),
+            '/atualizarCurso': (context) => AtualizarCurso(),
+            '/buscarDeletarCurso': (context) => DeletarBuscarCurso(),
+            '/deletarCurso': (context) => DeletarCurso(),
+            '/buscarCurso': (context) => BuscarCurso(),
+            '/listarCurso': (context) => ListarCurso(),
           });
 }
