@@ -9,7 +9,6 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
-
   List<Widget> screens = [
     Container(
       color: Color.fromARGB(150, 210, 233, 183),
@@ -39,8 +38,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -48,13 +47,12 @@ class _DashboardState extends State<Dashboard> {
             ),
             child: TextButton(
               child: Center(
-                  child: Text(
-                '',
-                style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
-              )),
-              onPressed: () {
-                //navega para a rota '/dashboard' quando o botão é clicado
-              },
+                child: Text(
+                  '',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                ),
+              ),
+              onPressed: () {},
             ),
           ),
         ],
@@ -88,8 +86,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -120,8 +118,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -152,8 +150,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -182,8 +180,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -231,8 +229,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -263,8 +261,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -295,8 +293,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -327,8 +325,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],
@@ -337,7 +335,7 @@ class _DashboardState extends State<Dashboard> {
             child: TextButton(
               child: Center(
                   child: Text(
-                'Deletar dados de um aluno',
+                'Deletar cadastro de um aluno',
                 style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
               )),
               onPressed: () {
@@ -359,8 +357,8 @@ class _DashboardState extends State<Dashboard> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                stops: [0.2, 1],
-                colors: [
+                stops: const [0.2, 1],
+                colors: const [
                   Color.fromARGB(148, 154, 194, 150),
                   Color.fromARGB(255, 18, 73, 41),
                 ],

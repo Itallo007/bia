@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Cadastrar_aluno extends StatelessWidget {
-  const Cadastrar_aluno({
+class CadastrarAluno extends StatelessWidget {
+  const CadastrarAluno({
     Key? key,
   }) : super(key: key);
 
@@ -9,8 +9,8 @@ class Cadastrar_aluno extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("BIA - Basic Internship Administrator"),
-        centerTitle: false,
+        title: Text("Cadastrar aluno"),
+        centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
         actions: [
           IconButton(
@@ -39,12 +39,12 @@ class Cadastrar_aluno extends StatelessWidget {
               child: Image.asset("imagens/bia_logo.png"),
             ),
             SizedBox(
-              height: 60,
+              height: 40,
             ),
             TextFormField(
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
-                labelText: "Nome",
+                labelText: "Nome completo",
                 labelStyle: TextStyle(
                   color: Color.fromARGB(117, 117, 116, 116),
                   fontWeight: FontWeight.w400,
@@ -141,8 +141,8 @@ class Cadastrar_aluno extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: [0.2, 1],
-                  colors: [
+                  stops: const [0.2, 1],
+                  colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
                   ],
