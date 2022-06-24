@@ -97,7 +97,7 @@ class Login extends StatelessWidget {
                 )),
                 onPressed: () {
                   //navega para a rota '/dashboard' quando o botão é clicado
-                  Navigator.of(context).pushReplacementNamed('/buscarAluno');
+                  Navigator.of(context).pushReplacementNamed('/buscarProfessor');
                 },
               ),
             ),

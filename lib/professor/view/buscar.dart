@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class AtualizarBuscarAluno extends StatelessWidget {
-  const AtualizarBuscarAluno({
+class BuscarProfessor extends StatelessWidget {
+  const BuscarProfessor({
     Key? key,
   }) : super(key: key);
 
@@ -11,7 +11,7 @@ class AtualizarBuscarAluno extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Atualizar dados de um aluno"),
+        title: Text("Procurar dados de um professor"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
         actions: [
@@ -52,7 +52,7 @@ class AtualizarBuscarAluno extends StatelessWidget {
                   borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
-                labelText: "Matrícula",
+                labelText: "SIAPE",
                 labelStyle: TextStyle(
                   color: Color.fromARGB(117, 117, 116, 116),
                   fontWeight: FontWeight.w400,
@@ -89,7 +89,7 @@ class AtualizarBuscarAluno extends StatelessWidget {
                 )),
                 onPressed: () {
                   //navega para a rota '/dashboard' quando o botão é clicado
-                  Navigator.of(context).pushReplacementNamed('/atualizarAluno');
+                  Navigator.of(context).pushReplacementNamed('/listarProfessor');
                 },
               ),
             ),

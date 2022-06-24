@@ -1,9 +1,7 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
-class AtualizarBuscarAluno extends StatelessWidget {
-  const AtualizarBuscarAluno({
+class AtualizarProfessor extends StatelessWidget {
+  const AtualizarProfessor({
     Key? key,
   }) : super(key: key);
 
@@ -11,14 +9,14 @@ class AtualizarBuscarAluno extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Atualizar dados de um aluno"),
+        title: Text("Atualizar dados de um professor"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
         actions: [
           IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/dashboard');
+              Navigator.of(context).pushReplacementNamed('/atualizarBuscarProfessor');
             },
           ),
         ],
@@ -41,18 +39,12 @@ class AtualizarBuscarAluno extends StatelessWidget {
               child: Image.asset("imagens/bia_logo.png"),
             ),
             SizedBox(
-              height: 60,
+              height: 40,
             ),
             TextFormField(
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                fillColor: Color.fromARGB(148, 154, 194, 150),
-                filled: true,
-                border: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                labelText: "Matrícula",
+                labelText: "E-mail",
                 labelStyle: TextStyle(
                   color: Color.fromARGB(117, 117, 116, 116),
                   fontWeight: FontWeight.w400,
@@ -63,8 +55,40 @@ class AtualizarBuscarAluno extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+            TextFormField(
+              keyboardType: TextInputType.phone,
+              decoration: InputDecoration(
+                labelText: "Telefone",
+                labelStyle: TextStyle(
+                  color: Color.fromARGB(117, 117, 116, 116),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            TextFormField(
+              keyboardType: TextInputType.text,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: "Senha",
+                labelStyle: TextStyle(
+                  color: Color.fromARGB(117, 117, 116, 116),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
             Container(
-              margin: EdgeInsets.only(top: 50, left: 90, right: 90),
+              margin: EdgeInsets.only(top: 10, left: 90, right: 90),
               height: 50,
               width: 300,
               decoration: BoxDecoration(
@@ -84,12 +108,12 @@ class AtualizarBuscarAluno extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'PROCURAR',
+                  'ATUALIZAR',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
                   //navega para a rota '/dashboard' quando o botão é clicado
-                  Navigator.of(context).pushReplacementNamed('/atualizarAluno');
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
                 },
               ),
             ),
