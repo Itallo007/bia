@@ -271,7 +271,7 @@ class _DashboardState extends State<Dashboard> {
             child: TextButton(
               child: Center(
                   child: Text(
-                'Listar todos os alunos',
+                'Procurar cadastro de um aluno',
                 style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
               )),
               onPressed: () {
@@ -367,7 +367,7 @@ class _DashboardState extends State<Dashboard> {
             child: TextButton(
               child: Center(
                   child: Text(
-                'Importar todos os alunos',
+                'Importar dados de todos os alunos',
                 style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
               )),
               onPressed: () {

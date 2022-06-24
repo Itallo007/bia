@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DeletarAluno extends StatelessWidget {
-  const DeletarAluno({
+class BuscarAluno extends StatelessWidget {
+  const BuscarAluno({
     Key? key,
   }) : super(key: key);
 
@@ -9,14 +9,14 @@ class DeletarAluno extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Deletar cadastro de um aluno"),
+        title: Text("Procurar cadastro de um aluno"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
         actions: [
           IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/buscarDeletarAluno');
+              Navigator.of(context).pushReplacementNamed('/dashboard');
             },
           ),
         ],
@@ -39,18 +39,30 @@ class DeletarAluno extends StatelessWidget {
               child: Image.asset("imagens/bia_logo.png"),
             ),
             SizedBox(
-              height: 80,
+              height: 60,
             ),
-            SizedBox(
-              child: Center(
-                child: Text('TEM QUE COLOCAR UM BOX PARA DEMONSTRAR DADOS DE ALUNO ENCONTRADO. não sei como fazer ainda :/'),
+            TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                fillColor: Color.fromARGB(148, 154, 194, 150),
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                labelText: "Matrícula",
+                labelStyle: TextStyle(
+                  color: Color.fromARGB(117, 117, 116, 116),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 20,
               ),
             ),
-            SizedBox(
-              height: 40,
-            ),
             Container(
-              margin: EdgeInsets.only(top: 40, left: 90, right: 90),
+              margin: EdgeInsets.only(top: 50, left: 90, right: 90),
               height: 50,
               width: 300,
               decoration: BoxDecoration(
@@ -70,12 +82,12 @@ class DeletarAluno extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'DELETAR',
+                  'PROCURAR',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
                   //navega para a rota '/dashboard' quando o botão é clicado
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                  Navigator.of(context).pushReplacementNamed('/listarAluno');
                 },
               ),
             ),
