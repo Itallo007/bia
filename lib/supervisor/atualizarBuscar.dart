@@ -1,13 +1,28 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({
+class AtualizarBuscarSupervisor extends StatelessWidget {
+  const AtualizarBuscarSupervisor({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Atualizar dados de um supervisor"),
+        centerTitle: true,
+        backgroundColor: Color.fromARGB(255, 18, 73, 41),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/dashboard');
+            },
+          ),
+        ],
+      ),
       body: Container(
         color: Color.fromARGB(150, 210, 233, 183),
         padding: EdgeInsets.only(
@@ -18,18 +33,18 @@ class Login extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
-              height: 60,
+              height: 0,
             ),
             SizedBox(
-              width: 400,
-              height: 114,
+              width: 200,
+              height: 86,
               child: Image.asset("imagens/bia_logo.png"),
             ),
             SizedBox(
               height: 60,
             ),
             TextFormField(
-              keyboardType: TextInputType.emailAddress,
+              keyboardType: TextInputType.name,
               decoration: InputDecoration(
                 fillColor: Color.fromARGB(148, 154, 194, 150),
                 filled: true,
@@ -37,7 +52,7 @@ class Login extends StatelessWidget {
                   borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
-                labelText: "E-mail",
+                labelText: "Nome completo",
                 labelStyle: TextStyle(
                   color: Color.fromARGB(117, 117, 116, 116),
                   fontWeight: FontWeight.w400,
@@ -49,30 +64,30 @@ class Login extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 45,
+              height: 20,
             ),
             TextFormField(
-              keyboardType: TextInputType.text,
-              obscureText: true,
+              keyboardType: TextInputType.name,
               decoration: InputDecoration(
-                  fillColor: Color.fromARGB(148, 154, 194, 150),
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  labelText: "Senha",
-                  labelStyle: TextStyle(
-                    color: Color.fromARGB(117, 117, 116, 116),
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18,
-                  )),
-            ),
-            SizedBox(
-              height: 60,
+                fillColor: Color.fromARGB(148, 154, 194, 150),
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                labelText: "Unidade concedente - OPÇÃO DE ROLAR",
+                labelStyle: TextStyle(
+                  color: Color.fromARGB(117, 117, 116, 116),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                ),
+              ),
+              style: TextStyle(
+                fontSize: 20,
+              ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 10, left: 90, right: 90),
+              margin: EdgeInsets.only(top: 50, left: 90, right: 90),
               height: 50,
               width: 300,
               decoration: BoxDecoration(
@@ -92,12 +107,12 @@ class Login extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'ENTRAR',
+                  'PROCURAR',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
                   //navega para a rota '/dashboard' quando o botão é clicado
-                  Navigator.of(context).pushReplacementNamed('/buscarSupervisor');
+                  Navigator.of(context).pushReplacementNamed('/atualizarSupervisor');
                 },
               ),
             ),

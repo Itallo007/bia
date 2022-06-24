@@ -18,6 +18,13 @@ import 'package:bia/professor/view/buscarDeletar.dart';
 import 'package:bia/professor/view/cadastrar.dart';
 import 'package:bia/professor/view/deletar.dart';
 import 'package:bia/professor/view/listarBuscar.dart';
+import 'package:bia/supervisor/atualizar.dart';
+import 'package:bia/supervisor/atualizarBuscar.dart';
+import 'package:bia/supervisor/buscar.dart';
+import 'package:bia/supervisor/buscarDeletar.dart';
+import 'package:bia/supervisor/cadastrar.dart';
+import 'package:bia/supervisor/deletar.dart';
+import 'package:bia/supervisor/listarBuscar.dart';
 import 'package:flutter/material.dart';
 import 'aluno/view/buscar.dart';
 import 'dashboard/dashboard.dart';
@@ -57,5 +64,12 @@ class App extends StatelessWidget {
             '/deletarCurso': (context) => DeletarCurso(),
             '/buscarCurso': (context) => BuscarCurso(),
             '/listarCurso': (context) => ListarCurso(),
+            '/cadastrarSupervisor': (context) => CadastrarSupervisor(),
+            '/atualizarBuscarSupervisor': (context) => AtualizarBuscarSupervisor(),
+            '/atualizarSupervisor': (context) => AtualizarSupervisor(),
+            '/buscarDeletarSupervisor': (context) => BuscarDeletarSupervisor(),
+            '/deletarSupervisor': (context) => DeletarSupervisor(),
+            '/buscarSupervisor': (context) => BuscarSupervisor(),
+            '/listarSupervisor': (context) => ListarSupervisor(),
           });
 }
