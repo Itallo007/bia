@@ -20,7 +20,7 @@ class Login extends StatelessWidget {
             SizedBox(
               width: 300,
               height: 135,
-              child: Image.asset("imagens/bialogo.png"),
+              child: Image.asset("imagens/bia_logo.png"),
             ),
             SizedBox(
               height: 80,
@@ -32,7 +32,7 @@ class Login extends StatelessWidget {
                 filled: true,
                 border: OutlineInputBorder(
                   borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
@@ -56,7 +56,7 @@ class Login extends StatelessWidget {
                   filled: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   labelText: "Senha",
                   labelStyle: TextStyle(

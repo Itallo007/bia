@@ -27,7 +27,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("BIA - Basic Intership Administrator"),
+          title: Text("BIA - Basic Internship Administrator"),
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 18, 73, 41),
           actions: [

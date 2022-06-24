@@ -60,7 +60,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - imagens/bialogo.png
+    - imagens/bia_logo.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
