@@ -25,45 +25,28 @@ class _DashboardState extends State<Dashboard> {
           left: 40,
           right: 40,
         ),
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              width: 200,
-              height: 86,
-              child: Image.asset("imagens/bia_logo.png"),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10, left: 5, right: 170),
-              height: 150,
-              width: 170,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+        child: GridView.count(
+          // Create a grid with 2 columns. If you change the scrollDirection to
+          // horizontal, this produces 2 rows.
+          crossAxisCount: 2,
+          // Generate 100 widgets that display their index in the List.
+          children: List.generate(
+            6,
+            (index) {
+              return Center(
+                child: TextButton(
+                  child: Center(
+                      child: Text(
+                    'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                    style: TextStyle(color: Color.fromARGB(218, 88, 28, 28)),
+                  )),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed('/dashboard');
+                  },
                 ),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
-                  colors: const [
-                    Color.fromARGB(148, 154, 194, 150),
-                    Color.fromARGB(255, 18, 73, 41),
-                  ],
-                ),
-              ),
-              child: TextButton(
-                child: Center(
-                  child: Text(
-                    '',
-                    style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
-                  ),
-                ),
-                onPressed: () {},
-              ),
-            ),
-          ],
+              );
+            },
+          ),
         ),
       ),
       Container(
