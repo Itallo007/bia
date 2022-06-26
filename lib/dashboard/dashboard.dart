@@ -108,7 +108,7 @@ class _DashboardState extends State<Dashboard> {
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  //navega para a rota '/dashboard' quando o botão é clicado
+                  Navigator.of(context).pushReplacementNamed('/cadastrarVaga');
                 },
               ),
             ),
@@ -136,11 +136,11 @@ class _DashboardState extends State<Dashboard> {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Listar todas as vagas',
+                  'Procurar uma vaga',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  //navega para a rota '/dashboard' quando o botão é clicado
+                  Navigator.of(context).pushReplacementNamed('/buscarVaga');
                 },
               ),
             ),
@@ -171,7 +171,9 @@ class _DashboardState extends State<Dashboard> {
                   'Atualizar dados de uma vaga',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/atualizarBuscarVaga');
+                },
               ),
             ),
             SizedBox(
@@ -202,7 +204,39 @@ class _DashboardState extends State<Dashboard> {
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  //navega para a rota '/dashboard' quando o botão é clicado
+                  Navigator.of(context).pushReplacementNamed('/buscarDeletarVaga');
+                },
+              ),
+            ),
+            SizedBox(
+              height: 35,
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+              height: 50,
+              width: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.2, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'Listar todas as vagas disponíveis',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/vagasDisponiveis');
                 },
               ),
             ),
@@ -379,7 +413,7 @@ class _DashboardState extends State<Dashboard> {
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                  Navigator.of(context).pushReplacementNamed('/importarAluno');
                 },
               ),
             ),

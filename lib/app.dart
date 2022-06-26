@@ -3,6 +3,7 @@ import 'package:bia/aluno/view/atualizarBuscar.dart';
 import 'package:bia/aluno/view/buscarDeletar.dart';
 import 'package:bia/aluno/view/cadastrar.dart';
 import 'package:bia/aluno/view/deletar.dart';
+import 'package:bia/aluno/view/importacao.dart';
 import 'package:bia/aluno/view/listarBusca.dart';
 import 'package:bia/curso/view/atualizar.dart';
 import 'package:bia/curso/view/atualizarBuscar.dart';
@@ -25,6 +26,14 @@ import 'package:bia/supervisor/buscarDeletar.dart';
 import 'package:bia/supervisor/cadastrar.dart';
 import 'package:bia/supervisor/deletar.dart';
 import 'package:bia/supervisor/listarBuscar.dart';
+import 'package:bia/vagas/view/atualizar.dart';
+import 'package:bia/vagas/view/atualizarBuscar.dart';
+import 'package:bia/vagas/view/buscar.dart';
+import 'package:bia/vagas/view/buscarDeletar.dart';
+import 'package:bia/vagas/view/cadastrar.dart';
+import 'package:bia/vagas/view/deletar.dart';
+import 'package:bia/vagas/view/listarBuscar.dart';
+import 'package:bia/vagas/view/vagasDisponiveis.dart';
 import 'package:flutter/material.dart';
 import 'aluno/view/buscar.dart';
 import 'dashboard/dashboard.dart';
@@ -71,5 +80,14 @@ class App extends StatelessWidget {
             '/deletarSupervisor': (context) => DeletarSupervisor(),
             '/buscarSupervisor': (context) => BuscarSupervisor(),
             '/listarSupervisor': (context) => ListarSupervisor(),
+            '/cadastrarVaga': (context) => CadastrarVagas(),
+            '/buscarVaga': (context) => BuscarVaga(),
+            '/listarVaga': (context) => ListarVaga(),
+            '/atualizarBuscarVaga': (context) => AtualizarBuscarVaga(),
+            '/atualizarVaga': (context) => AtualizarVaga(),
+            '/buscarDeletarVaga': (context) => BuscarDeletarVaga(),
+            '/deletarVaga': (context) => DeletarVaga(),
+            '/vagasDisponiveis': (context) => VagasDisponiveis(),
+            '/importarAluno': (context) => ImportarAluno(),
           });
 }
