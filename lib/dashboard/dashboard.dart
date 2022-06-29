@@ -33,7 +33,7 @@ class _DashboardState extends State<Dashboard> {
           crossAxisCount: 2,
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.all(30),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(
                   Radius.circular(30),
@@ -151,8 +151,8 @@ class _DashboardState extends State<Dashboard> {
                   end: Alignment.bottomRight,
                   stops: const [0.0, 1],
                   colors: const [
-                    Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
+                    Color.fromARGB(148, 154, 194, 150),
                   ],
                 ),
               ),
@@ -163,7 +163,7 @@ class _DashboardState extends State<Dashboard> {
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                  Navigator.of(context).pushReplacementNamed('/prioridade');
                 },
               ),
             ),
@@ -178,35 +178,8 @@ class _DashboardState extends State<Dashboard> {
                   end: Alignment.bottomRight,
                   stops: const [0.0, 1],
                   colors: const [
-                    Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
-                  ],
-                ),
-              ),
-              child: TextButton(
-                child: Center(
-                    child: Text(
-                  'IMPORTAÇÕES',
-                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
-                )),
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
-                },
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: const [0.0, 1],
-                  colors: const [
                     Color.fromARGB(148, 154, 194, 150),
-                    Color.fromARGB(255, 18, 73, 41),
                   ],
                 ),
               ),
@@ -217,7 +190,7 @@ class _DashboardState extends State<Dashboard> {
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                  Navigator.of(context).pushReplacementNamed('/sugestoes');
                 },
               ),
             ),
@@ -232,19 +205,46 @@ class _DashboardState extends State<Dashboard> {
                   end: Alignment.bottomRight,
                   stops: const [0.0, 1],
                   colors: const [
-                    Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
+                    Color.fromARGB(148, 154, 194, 150),
                   ],
                 ),
               ),
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'AJUDA',
+                  'IMPORTAR ARQUIVO ALUNOS GERAIS',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                  Navigator.of(context).pushReplacementNamed('/importarAlunosGerais');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(255, 18, 73, 41),
+                    Color.fromARGB(148, 154, 194, 150),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'IMPORTAR ARQUIVO MATÉRIA ESTÁGIO',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/importarAlunosEstagio');
                 },
               ),
             ),
@@ -594,11 +594,11 @@ class _DashboardState extends State<Dashboard> {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Importar dados de todos os alunos',
+                  'Listar alunos matriculados em estágio',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/importarAluno');
+                  Navigator.of(context).pushReplacementNamed('/matriculadosEstagio');
                 },
               ),
             ),

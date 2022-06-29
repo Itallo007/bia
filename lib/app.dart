@@ -3,8 +3,8 @@ import 'package:bia/aluno/view/atualizarBuscar.dart';
 import 'package:bia/aluno/view/buscarDeletar.dart';
 import 'package:bia/aluno/view/cadastrar.dart';
 import 'package:bia/aluno/view/deletar.dart';
-import 'package:bia/aluno/view/importacao.dart';
 import 'package:bia/aluno/view/listarBusca.dart';
+import 'package:bia/aluno/view/matriculados.dart';
 import 'package:bia/concedente/view/atualizar.dart';
 import 'package:bia/concedente/view/atualizarBuscar.dart';
 import 'package:bia/concedente/view/buscar.dart';
@@ -21,6 +21,10 @@ import 'package:bia/curso/view/cadastrar.dart';
 import 'package:bia/curso/view/deletar.dart';
 import 'package:bia/curso/view/listarBuscar.dart';
 import 'package:bia/curso/view/menuCurso.dart';
+import 'package:bia/dashboard/importacao.dart';
+import 'package:bia/dashboard/importarEstagio.dart';
+import 'package:bia/dashboard/prioridade.dart';
+import 'package:bia/dashboard/sugestoes.dart';
 import 'package:bia/professor/view/atualizar.dart';
 import 'package:bia/professor/view/atualizarBuscar.dart';
 import 'package:bia/professor/view/buscar.dart';
@@ -99,7 +103,6 @@ class App extends StatelessWidget {
           '/buscarDeletarVaga': (context) => BuscarDeletarVaga(),
           '/deletarVaga': (context) => DeletarVaga(),
           '/vagasDisponiveis': (context) => VagasDisponiveis(),
-          '/importarAluno': (context) => ImportarAluno(),
           '/menuProfessor': (context) => MenuProfessor(),
           '/menuSupervisor': (context) => MenuSupervisor(),
           '/menuCurso': (context) => MenuCurso(),
@@ -111,6 +114,11 @@ class App extends StatelessWidget {
           '/cadastrarConcedente': (context) => CadastrarConcedente(),
           '/atualizarBuscarConcedente': (context) => AtualizarBuscarConcedente(),
           '/atualizarConcedente': (context) => AtualizarConcedente(),
+          '/importarAlunosGerais': (context) => ImportarAlunosGerais(),
+          '/importarAlunosEstagio': (context) => ImportarAlunosMatriculadosEstagio(),
+          '/matriculadosEstagio': (context) => MatriculadosEstagio(),
+          '/prioridade': (context) => Prioridade(),
+          '/sugestoes': (context) => Sugestoes(),
         },
       );
 }

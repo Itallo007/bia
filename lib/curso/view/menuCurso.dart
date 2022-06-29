@@ -11,7 +11,7 @@ class MenuCurso extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CURSO"),
+        title: Text("CURSOS"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
         actions: [

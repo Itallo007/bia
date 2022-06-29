@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ImportarAluno extends StatelessWidget {
-  const ImportarAluno({
+class ImportarAlunosGerais extends StatelessWidget {
+  const ImportarAlunosGerais({
     Key? key,
   }) : super(key: key);
 
