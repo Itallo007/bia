@@ -12,6 +12,7 @@ import 'package:bia/curso/view/buscarDeletar.dart';
 import 'package:bia/curso/view/cadastrar.dart';
 import 'package:bia/curso/view/deletar.dart';
 import 'package:bia/curso/view/listarBuscar.dart';
+import 'package:bia/curso/view/menuCurso.dart';
 import 'package:bia/professor/view/atualizar.dart';
 import 'package:bia/professor/view/atualizarBuscar.dart';
 import 'package:bia/professor/view/buscar.dart';
@@ -93,6 +94,7 @@ class App extends StatelessWidget {
           '/importarAluno': (context) => ImportarAluno(),
           '/menuProfessor': (context) => MenuProfessor(),
           '/menuSupervisor': (context) => MenuSupervisor(),
+          '/menuCurso': (context) => MenuCurso(),
         },
       );
 }
