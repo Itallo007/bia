@@ -614,6 +614,14 @@ class _DashboardState extends State<Dashboard> {
         ),
         child: ListView(
           children: <Widget>[
+            SizedBox(
+              width: 200,
+              height: 86,
+              child: Image.asset("imagens/bia_logo.png"),
+            ),
+            SizedBox(
+              height: 40,
+            ),
             Container(
               margin: EdgeInsets.only(top: 10, left: 5, right: 5),
               height: 50,
