@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class MenuCurso extends StatelessWidget {
-  const MenuCurso({
+class MenuConcedente extends StatelessWidget {
+  const MenuConcedente({
     Key? key,
   }) : super(key: key);
 
@@ -11,7 +11,7 @@ class MenuCurso extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CURSO"),
+        title: Text("UNIDADES CONCEDENTES"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
         actions: [
@@ -61,11 +61,11 @@ class MenuCurso extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Cadastrar novo curso',
+                  'Cadastrar nova unidade concedente',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/cadastrarCurso');
+                  Navigator.of(context).pushReplacementNamed('/cadastrarConcedente');
                 },
               ),
             ),
@@ -93,11 +93,11 @@ class MenuCurso extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Procurar cadastro de um curso',
+                  'Procurar cadastro de unidade concedente',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/buscarCurso');
+                  Navigator.of(context).pushReplacementNamed('/buscarConcedente');
                 },
               ),
             ),
@@ -125,11 +125,11 @@ class MenuCurso extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Atualizar dados de um curso',
+                  'Atualizar dados de unidade concedente',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/atualizarBuscarCurso');
+                  Navigator.of(context).pushReplacementNamed('/atualizarBuscarConcedente');
                 },
               ),
             ),
@@ -157,11 +157,11 @@ class MenuCurso extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Deletar cadastro de um curso',
+                  'Deletar cadastro de unidade concedente',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/buscarDeletarCurso');
+                  Navigator.of(context).pushReplacementNamed('/buscarDeletarConcedente');
                 },
               ),
             ),

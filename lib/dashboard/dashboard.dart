@@ -136,7 +136,7 @@ class _DashboardState extends State<Dashboard> {
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                  Navigator.of(context).pushReplacementNamed('/menuConcedente');
                 },
               ),
             ),

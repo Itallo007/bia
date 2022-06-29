@@ -1,9 +1,11 @@
+// ignore: duplicate_ignore
+// ignore: file_names
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 
-class MenuCurso extends StatelessWidget {
-  const MenuCurso({
+class ListarConcedente extends StatelessWidget {
+  const ListarConcedente({
     Key? key,
   }) : super(key: key);
 
@@ -11,14 +13,14 @@ class MenuCurso extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CURSO"),
+        title: Text("Procurar cadastro de concedente"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
         actions: [
           IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/dashboard');
+              Navigator.of(context).pushReplacementNamed('/buscarConcedente');
             },
           ),
         ],
@@ -33,15 +35,26 @@ class MenuCurso extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
+              height: 0,
+            ),
+            SizedBox(
               width: 200,
               height: 86,
               child: Image.asset("imagens/bia_logo.png"),
             ),
             SizedBox(
+              height: 80,
+            ),
+            SizedBox(
+              child: Center(
+                child: Text('TEM QUE COLOCAR UM BOX PARA DEMONSTRAR DADOS DE ALUNO ENCONTRADO. não sei como fazer ainda :/'),
+              ),
+            ),
+            SizedBox(
               height: 40,
             ),
             Container(
-              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+              margin: EdgeInsets.only(top: 40, left: 90, right: 90),
               height: 50,
               width: 300,
               decoration: BoxDecoration(
@@ -51,7 +64,7 @@ class MenuCurso extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.0, 1],
+                  stops: const [0.2, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -61,19 +74,20 @@ class MenuCurso extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Cadastrar novo curso',
+                  'REPETIR BUSCA',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/cadastrarCurso');
+                  //navega para a rota '/dashboard' quando o botão é clicado
+                  Navigator.of(context).pushReplacementNamed('/buscarConcedente');
                 },
               ),
             ),
             SizedBox(
-              height: 35,
+              height: 0,
             ),
             Container(
-              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+              margin: EdgeInsets.only(top: 40, left: 90, right: 90),
               height: 50,
               width: 300,
               decoration: BoxDecoration(
@@ -83,7 +97,7 @@ class MenuCurso extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.0, 1],
+                  stops: const [0.2, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -93,19 +107,20 @@ class MenuCurso extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Procurar cadastro de um curso',
+                  'ATUALIZAR DADOS',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/buscarCurso');
+                  //navega para a rota '/dashboard' quando o botão é clicado
+                  Navigator.of(context).pushReplacementNamed('/atualizarConcedente');
                 },
               ),
             ),
             SizedBox(
-              height: 35,
+              height: 0,
             ),
             Container(
-              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+              margin: EdgeInsets.only(top: 40, left: 90, right: 90),
               height: 50,
               width: 300,
               decoration: BoxDecoration(
@@ -115,7 +130,7 @@ class MenuCurso extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.0, 1],
+                  stops: const [0.2, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -125,75 +140,12 @@ class MenuCurso extends StatelessWidget {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'Atualizar dados de um curso',
+                  'DELETAR DADOS',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/atualizarBuscarCurso');
-                },
-              ),
-            ),
-            SizedBox(
-              height: 35,
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
-              height: 50,
-              width: 300,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: const [0.0, 1],
-                  colors: const [
-                    Color.fromARGB(148, 154, 194, 150),
-                    Color.fromARGB(255, 18, 73, 41),
-                  ],
-                ),
-              ),
-              child: TextButton(
-                child: Center(
-                    child: Text(
-                  'Deletar cadastro de um curso',
-                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
-                )),
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/buscarDeletarCurso');
-                },
-              ),
-            ),
-            SizedBox(
-              height: 35,
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
-              height: 50,
-              width: 300,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: const [0.0, 1],
-                  colors: const [
-                    Color.fromARGB(148, 154, 194, 150),
-                    Color.fromARGB(255, 18, 73, 41),
-                  ],
-                ),
-              ),
-              child: TextButton(
-                child: Center(
-                    child: Text(
-                  'Voltar',
-                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
-                )),
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                  //navega para a rota '/dashboard' quando o botão é clicado
+                  Navigator.of(context).pushReplacementNamed('/deletarConcedente');
                 },
               ),
             ),

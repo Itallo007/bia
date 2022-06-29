@@ -5,6 +5,14 @@ import 'package:bia/aluno/view/cadastrar.dart';
 import 'package:bia/aluno/view/deletar.dart';
 import 'package:bia/aluno/view/importacao.dart';
 import 'package:bia/aluno/view/listarBusca.dart';
+import 'package:bia/concedente/view/atualizar.dart';
+import 'package:bia/concedente/view/atualizarBuscar.dart';
+import 'package:bia/concedente/view/buscar.dart';
+import 'package:bia/concedente/view/buscarDeletar.dart';
+import 'package:bia/concedente/view/cadastrar.dart';
+import 'package:bia/concedente/view/deletar.dart';
+import 'package:bia/concedente/view/listarBuscar.dart';
+import 'package:bia/concedente/view/menuConcedente.dart';
 import 'package:bia/curso/view/atualizar.dart';
 import 'package:bia/curso/view/atualizarBuscar.dart';
 import 'package:bia/curso/view/buscar.dart';
@@ -95,6 +103,14 @@ class App extends StatelessWidget {
           '/menuProfessor': (context) => MenuProfessor(),
           '/menuSupervisor': (context) => MenuSupervisor(),
           '/menuCurso': (context) => MenuCurso(),
+          '/menuConcedente': (context) => MenuConcedente(),
+          '/buscarConcedente': (context) => BuscarConcedente(),
+          '/listarBuscarConcedente': (context) => ListarConcedente(),
+          '/deletarConcedente': (context) => DeletarConcedente(),
+          '/buscarDeletarConcedente': (context) => BuscarDeletarConcedente(),
+          '/cadastrarConcedente': (context) => CadastrarConcedente(),
+          '/atualizarBuscarConcedente': (context) => AtualizarBuscarConcedente(),
+          '/atualizarConcedente': (context) => AtualizarConcedente(),
         },
       );
 }
