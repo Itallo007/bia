@@ -21,32 +21,234 @@ class _DashboardState extends State<Dashboard> {
       Container(
         color: Color.fromARGB(150, 210, 233, 183),
         padding: EdgeInsets.only(
-          top: 60,
-          left: 40,
-          right: 40,
+          top: 5,
+          left: 35,
+          right: 35,
         ),
         child: GridView.count(
-          // Create a grid with 2 columns. If you change the scrollDirection to
-          // horizontal, this produces 2 rows.
+          primary: false,
+          padding: const EdgeInsets.all(1),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
           crossAxisCount: 2,
-          // Generate 100 widgets that display their index in the List.
-          children: List.generate(
-            6,
-            (index) {
-              return Center(
-                child: TextButton(
-                  child: Center(
-                      child: Text(
-                    'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                    style: TextStyle(color: Color.fromARGB(218, 88, 28, 28)),
-                  )),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacementNamed('/dashboard');
-                  },
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
                 ),
-              );
-            },
-          ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'PROFESSOR',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'SUPERVISOR',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'CURSOS',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'CONCEDENTES',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'PRIORIDADE',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'IMPORTAÇÕES',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'SUGESTÕES',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'AJUDA',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/dashboard');
+                },
+              ),
+            ),
+          ],
         ),
       ),
       Container(
@@ -77,7 +279,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -109,7 +311,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -141,7 +343,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -173,7 +375,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -205,7 +407,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -254,7 +456,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -286,7 +488,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -318,7 +520,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -350,7 +552,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
@@ -382,7 +584,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  stops: const [0.2, 1],
+                  stops: const [0.0, 1],
                   colors: const [
                     Color.fromARGB(148, 154, 194, 150),
                     Color.fromARGB(255, 18, 73, 41),
