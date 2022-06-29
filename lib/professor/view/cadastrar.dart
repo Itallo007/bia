@@ -16,7 +16,7 @@ class CadastrarProfessor extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/cadastrarProfessor');
+              Navigator.of(context).pushReplacementNamed('/menuProfessor');
             },
           ),
         ],

@@ -19,6 +19,7 @@ import 'package:bia/professor/view/buscarDeletar.dart';
 import 'package:bia/professor/view/cadastrar.dart';
 import 'package:bia/professor/view/deletar.dart';
 import 'package:bia/professor/view/listarBuscar.dart';
+import 'package:bia/professor/view/menuProfessor.dart';
 import 'package:bia/supervisor/atualizar.dart';
 import 'package:bia/supervisor/atualizarBuscar.dart';
 import 'package:bia/supervisor/buscar.dart';
@@ -89,5 +90,6 @@ class App extends StatelessWidget {
             '/deletarVaga': (context) => DeletarVaga(),
             '/vagasDisponiveis': (context) => VagasDisponiveis(),
             '/importarAluno': (context) => ImportarAluno(),
+            '/menuProfessor': (context) => MenuProfessor(),
           });
 }

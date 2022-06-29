@@ -18,7 +18,7 @@ class BuscarProfessor extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/dashboard');
+              Navigator.of(context).pushReplacementNamed('/menuProfessor');
             },
           ),
         ],

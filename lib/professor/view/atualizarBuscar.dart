@@ -18,7 +18,7 @@ class AtualizarBuscarProfessor extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/atualizarBuscarProfessor');
+              Navigator.of(context).pushReplacementNamed('/menuProfessor');
             },
           ),
         ],
