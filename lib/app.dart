@@ -23,6 +23,7 @@ import 'package:bia/curso/view/listarBuscar.dart';
 import 'package:bia/curso/view/menuCurso.dart';
 import 'package:bia/dashboard/importacao.dart';
 import 'package:bia/dashboard/importarEstagio.dart';
+import 'package:bia/dashboard/perfil.dart';
 import 'package:bia/dashboard/prioridade.dart';
 import 'package:bia/dashboard/sugestoes.dart';
 import 'package:bia/professor/view/atualizar.dart';
@@ -119,6 +120,7 @@ class App extends StatelessWidget {
           '/matriculadosEstagio': (context) => MatriculadosEstagio(),
           '/prioridade': (context) => Prioridade(),
           '/sugestoes': (context) => Sugestoes(),
+          '/perfil': (context) => Perfil(),
         },
       );
 }

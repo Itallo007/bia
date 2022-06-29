@@ -186,7 +186,7 @@ class _DashboardState extends State<Dashboard> {
               child: TextButton(
                 child: Center(
                     child: Text(
-                  'SUGESTÕES',
+                  'SUGESTÃO',
                   style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
                 )),
                 onPressed: () {
@@ -605,20 +605,92 @@ class _DashboardState extends State<Dashboard> {
           ],
         ),
       ),
-      Text('Mais'),
-    ];
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("BIA - Basic Internship Administrator"),
-          centerTitle: false,
-          backgroundColor: Color.fromARGB(255, 18, 73, 41),
-          actions: [
+      Container(
+        color: Color.fromARGB(150, 210, 233, 183),
+        padding: EdgeInsets.only(
+          top: 60,
+          left: 40,
+          right: 40,
+        ),
+        child: ListView(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+              height: 50,
+              width: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'ACESSAR PERFIL',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/perfil');
+                },
+              ),
+            ),
+            SizedBox(
+              height: 35,
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+              height: 50,
+              width: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: const [0.0, 1],
+                  colors: const [
+                    Color.fromARGB(148, 154, 194, 150),
+                    Color.fromARGB(255, 18, 73, 41),
+                  ],
+                ),
+              ),
+              child: TextButton(
+                child: Center(
+                    child: Text(
+                  'SAIR',
+                  style: TextStyle(color: Color.fromARGB(218, 235, 229, 229)),
+                )),
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/');
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+      /* actions: [
             IconButton(
                 icon: const Icon(Icons.exit_to_app),
                 onPressed: () {
                   Navigator.of(context).pushReplacementNamed('/');
                 })
-          ],
+          ],*/
+    ];
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("BIA - Basic Internship Administrator"),
+          centerTitle: true,
+          backgroundColor: Color.fromARGB(255, 18, 73, 41),
         ),
         body: Center(child: screens.elementAt(_selectedIndex)),
         bottomNavigationBar: BottomNavigationBar(
