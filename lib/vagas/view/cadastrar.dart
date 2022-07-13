@@ -4,7 +4,7 @@ class CadastrarVagas extends StatefulWidget {
   const CadastrarVagas({Key? key}) : super(key: key);
   
   @override
-  State<CadastrarVagas> createState() => new _CadastrarVagasState();
+  State<CadastrarVagas> createState() => _CadastrarVagasState();
 }
 
 class _CadastrarVagasState extends State<CadastrarVagas> {

@@ -2,10 +2,23 @@
 
 import 'package:flutter/material.dart';
 
-class BuscarVaga extends StatelessWidget {
-  const BuscarVaga({
-    Key? key,
-  }) : super(key: key);
+class BuscarVaga extends StatefulWidget {
+  const BuscarVaga({Key? key}) : super(key: key);
+
+  @override
+  State<BuscarVaga> createState() => _BuscarVagaState();
+}
+
+class _BuscarVagaState extends State<BuscarVaga> {
+  final organizationList = <String>[
+    'MegaNews',
+    'Prefeitura',
+    'Soft Com',
+    'Grupo exito'
+  ];
+  String dropDownOrganizationValue = '';
+
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -14,71 +27,80 @@ class BuscarVaga extends StatelessWidget {
         title: Text("Buscar dados de uma vaga"),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 18, 73, 41),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/dashboard');
-            },
-          ),
-        ],
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed('/dashboard');
+          },
+        ),
       ),
       body: Container(
         color: Color.fromARGB(150, 210, 233, 183),
         padding: EdgeInsets.only(
-          top: 60,
+          top: 0,
           left: 40,
           right: 40,
         ),
         child: ListView(
           children: <Widget>[
             SizedBox(
-              height: 0,
-            ),
-            SizedBox(
-              width: 200,
-              height: 86,
-              child: Image.asset("imagens/bia_logo.png"),
-            ),
-            SizedBox(
-              height: 60,
+              height: 24,
             ),
             TextFormField(
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
-                fillColor: Color.fromARGB(148, 154, 194, 150),
-                filled: true,
+                contentPadding: EdgeInsets.all(8),
+                suffixIcon: const Icon(Icons.search),
+                suffixIconColor: Color.fromARGB(20, 30, 30, 30),
                 border: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Color.fromARGB(148, 154, 194, 150), width: 2.0),
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 18, 73, 41), width: 2.0),
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
-                labelText: "Título",
-                labelStyle: TextStyle(
-                  color: Color.fromARGB(117, 117, 116, 116),
+                label: Text("Título"),
+                hintText: "Informe o título",
+                hintStyle: TextStyle(
+                  color: Color.fromARGB(30, 20, 20, 20),
                   fontWeight: FontWeight.w400,
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
             SizedBox(
               height: 20,
             ),
-            TextFormField(
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                labelText: "Unidade concedente - OPÇÃO DE ROLAR",
-                labelStyle: TextStyle(
-                  color: Color.fromARGB(117, 117, 116, 116),
-                  fontWeight: FontWeight.w400,
-                  fontSize: 18,
-                ),
-              ),
-              style: TextStyle(
-                fontSize: 20,
-              ),
+            DropdownButtonFormField<String>(
+                hint: Text('Selecione a empresa'),
+                value: (dropDownOrganizationValue.isEmpty
+                    ? null
+                    : dropDownOrganizationValue),
+                onChanged: (newValue) => {
+                      setState(() => {dropDownOrganizationValue = newValue!})
+                    },
+                items: organizationList
+                    .map((String e) =>
+                        DropdownMenuItem(value: e, child: Text(e)))
+                    .toList(),
+                decoration: InputDecoration(labelText: "Concedente")),
+            SizedBox(
+              height: 24,
+            ),
+            Row(
+              children: [
+                Text('Remunerado',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    )),
+                Checkbox(
+                    value: isChecked,
+                    onChanged: (bool? newValue) => {
+                          setState(() => {isChecked = newValue!})
+                        }),
+              ],
             ),
             Container(
               margin: EdgeInsets.only(top: 50, left: 90, right: 90),
@@ -86,7 +108,7 @@ class BuscarVaga extends StatelessWidget {
               width: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+                  Radius.circular(12),
                 ),
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
